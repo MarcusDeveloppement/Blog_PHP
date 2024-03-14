@@ -58,7 +58,7 @@ a {
 
 /* text */
 
-.text-danger {
+.text-error {
   color: var(--danger);
   font-size: 1.2rem;
   font-weight: bold;
