@@ -102,6 +102,11 @@ a {
   opacity: 0.5;
 }
 
+.small {
+  font-size: 12px;
+  margin: 0;
+}
+
 /* header */
 
 header {
