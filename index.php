@@ -1,12 +1,11 @@
 <?php
-$pdo = require_once './connexion.php';
-$statement = $pdo->prepare('SELECT * FROM article');
-$statement->execute();
-$articles = $statement->fetchAll();
+$pdo = require_once __DIR__ . '/database/models/ArticleDB.php';
+$articles = $pdo->fetchAll();
 $categories = [];
 
 $_GET = filter_input_array(INPUT_GET, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 $selectedCat = $_GET['cat'] ?? '';
+
   if (count($articles)){
     $cattmp = array_map(fn($a)=>$a['category'], $articles);
     $categories = array_reduce($cattmp,function($acc, $cat){
